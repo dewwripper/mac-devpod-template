@@ -1,0 +1,16 @@
+{
+  "name": "mac-devpod-template",
+  "dockerComposeFile": [
+    "./docker-compose.dev.yml"
+  ],
+  "service": "devpod",
+  "containerUser": "${localEnv:USER}",
+  "initializeCommand": "${localWorkspaceFolder}/.devpod/scripts/initialize-command.sh",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devpod/scripts/setup-claude-mcp.sh",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "overrideCommand": true,
+  "workspaceFolder": "/home/${localEnv:USER}/workspace",
+  "remoteUser": "${localEnv:USER}"
+}

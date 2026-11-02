@@ -1,0 +1,7 @@
+.env
+.devcontainer/.env
+.devpod/.env
+.antigravitycli
+.DS_Store
+DS_Store
+.examples/
